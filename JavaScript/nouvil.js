@@ -14,7 +14,7 @@ const sections = document.querySelectorAll(".section");
 let currentSection = "home";
 window.addEventListener("scroll", () => {
     sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop) {
+        if (window.scrollY >= section.offsetTop - 2) {
             currentSection = section.id;
         }
     });

@@ -152,6 +152,11 @@ button {
     color: var(--light-purple);
     border: 2px solid var(--light-purple);
 }
+button {
+    border: none;
+    background: none;
+    outline: none;
+}
 /* End Components */
 /* Start Header */
 .header {
@@ -197,7 +202,10 @@ button {
     margin-right: 30px;
 }
 @media (min-width: 992px) {
-    .header nav .toggle-menu {
+    .header nav .link-btn {
+        display: none;
+    }
+    .header nav .link-btn .toggle-menu {
         display: none;
     }
     
@@ -206,7 +214,7 @@ button {
     .header nav .links {
         display: none;
     }
-    .header nav .toggle-menu:hover + .links {
+    .header nav .link-btn:focus + .links {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -300,12 +308,18 @@ button {
         gap: 30px;
     }
 }
+@media (max-width: 767px) {
+    .services .service-container {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
 .services .service-container .service {
     display: flex;
 }
 .services .service-container .service i {
-    margin-right: 50px;
-    margin-top: 20px;
+    margin-right: 40px;
+    margin-top: 25px;
     font-size: 30px;
 }
 @media (max-width: 1199px) {
@@ -341,7 +355,6 @@ button {
 .portfolio .work .designs {
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 40px;
     text-align: center;
 }
 .portfolio .work .designs h3 {
@@ -365,7 +378,6 @@ button {
 .portfolio .work .websites {
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 40px;
     text-align: center;
 }
 .portfolio .work .websites h3 {
@@ -496,7 +508,7 @@ button {
     padding-top: var(--secondary-padding);
     padding-bottom: var(--secondary-padding);
 }
-.testimonials .container:first-child {
+.testimonials .container {
     text-align: center;
 }
 .testimonials .container .heading {
@@ -515,6 +527,14 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 20px;
+}
+@media (max-width: 767px) {
+    .testimonials .container:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .testimonials .content {
     display: flex;
